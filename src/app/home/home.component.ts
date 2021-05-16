@@ -5,18 +5,18 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 
 @Component({
-  selector: 'hs-root',
+  selector: 'hs-home',
   template: `
-  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav-container class="sidenav-container">
       <mat-sidenav #drawer class="sidenav" fixedInViewport
           [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
           [mode]="(isHandset$ | async) ? 'over' : 'side'"
           [opened]="(isHandset$ | async) === false">
         <mat-toolbar>Menu</mat-toolbar>
         <mat-nav-list>
-          <a mat-list-item routerLink="/categories">Categories</a>
-          <a mat-list-item routerLink="#">Link 2</a>
-          <a mat-list-item routerLink="#">Link 3</a>
+          <a mat-list-item href="#">Link 1</a>
+          <a mat-list-item href="#">Link 2</a>
+          <a mat-list-item href="#">Link 3</a>
         </mat-nav-list>
       </mat-sidenav>
       <mat-sidenav-content>
@@ -32,12 +32,12 @@ import { map, shareReplay } from 'rxjs/operators';
           <span>ng-quizzes</span>
         </mat-toolbar>
         <!-- Add Content Here -->
-        <router-outlet></router-outlet>
       </mat-sidenav-content>
     </mat-sidenav-container>
+    
   `,
   styles: [`
-      .sidenav-container {
+    .sidenav-container {
       height: 100%;
     }
     
@@ -54,15 +54,17 @@ import { map, shareReplay } from 'rxjs/operators';
       top: 0;
       z-index: 1;
     }
+    
   `]
 })
-export class AppComponent {
-  title = 'Hans Quizzes';
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-  .pipe(
-    map(result => result.matches),
-    shareReplay()
-  );
+export class HomeComponent {
 
-constructor(private breakpointObserver: BreakpointObserver) {}
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches),
+      shareReplay()
+    );
+
+  constructor(private breakpointObserver: BreakpointObserver) {}
+
 }
