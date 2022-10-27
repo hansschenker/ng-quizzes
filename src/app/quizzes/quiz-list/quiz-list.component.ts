@@ -8,6 +8,16 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
     </p>
   `,
   styles: [
+    `
+    :host {
+      background-color: cyan;
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+
+    }
+    `
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })

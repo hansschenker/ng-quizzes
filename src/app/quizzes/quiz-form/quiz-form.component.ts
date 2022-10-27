@@ -8,6 +8,11 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
     </p>
   `,
   styles: [
+   `
+   :host {
+    background-color: orange;
+   }
+   `
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
