@@ -7,6 +7,7 @@ import { QuizListComponent } from './quiz-list/quiz-list.component';
 import { QuizListitemComponent } from './quiz-listitem/quiz-listitem.component';
 import { QuizFormComponent } from './quiz-form/quiz-form.component';
 import { QuizDetailsComponent } from './quiz-details/quiz-details.component';
+import { QuizSearchComponent } from './quiz-search/quiz-search.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { QuizDetailsComponent } from './quiz-details/quiz-details.component';
     QuizListComponent,
     QuizListitemComponent,
     QuizFormComponent,
-    QuizDetailsComponent
+    QuizDetailsComponent,
+    QuizSearchComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +28,8 @@ import { QuizDetailsComponent } from './quiz-details/quiz-details.component';
     QuizListComponent,
     QuizListitemComponent,
     QuizFormComponent,
-    QuizDetailsComponent
+    QuizDetailsComponent,
+    QuizSearchComponent
   ]
 })
 export class QuizzesModule { }
